@@ -18,38 +18,16 @@ var seconds = document.querySelector('#seconds');
 var btnStart = document.querySelector('#btn-start');
 var btnRestart = document.querySelector('#btn-restart');
 
-var words = [
-  'trail',
-  'herb',
-  'pool',
-  'want',
-  'governor',
-  'officer',
-  'nuance',
-  'deteriorate',
-  'elbow',
-  'biography',
-  'stubborn',
-  'transfer',
-  'north',
-  'ballot',
-  'shower',
-  'resignation',
-  'war',
-  'talented',
-  'revenge',
-  'potential',
-  'grudge',
-  'snuggle',
-  'maze',
-  'prevalence',
-  'fault',
-  'idea',
-  'replacement',
-  'upset',
-  'deport',
-  'pocket'
-];
+// Fetching the words
+const words = [];
+(function fetchWordsArray() {
+  fetch('./words.json')
+    .then(res => res.json())
+    .then(data => {
+      data.forEach(word => words.push(word));
+    })
+    .catch(err => console.log(err));
+})();
 
 btnRestart.style.display = 'none';
 currentWordContainer.style.display = 'none';
@@ -88,7 +66,9 @@ function startMatch() {
 
 // Match currentWord to wordInput
 function matchWords() {
-  if (wordInput.value === currentWord.innerHTML) {
+  const wordInp = wordInput.value.toLowerCase();
+
+  if (wordInp === currentWord.innerHTML) {
     message.innerHTML = 'Correct!!!';
     return true;
   } else {

@@ -179,3 +179,15 @@ button:hover {
   color: #fff;
   transform: rotate(-90deg);
 }
+
+/*////////////////////////// 
+        MEDIA
+//////////////////////////*/
+@media screen and (max-width: 500px) {
+  .credit {
+    transform: rotate(0deg);
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
