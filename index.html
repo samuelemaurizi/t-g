@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata|Stardos+Stencil"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>TypingGame</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="title">
+          <h1><span>TypingGame</span></h1>
+          <p class="sub-title">
+            Type The Given Word Within
+            <span class="title-seconds" id="seconds">5</span> Seconds
+          </p>
+        </div>
+      </div>
+      <div class="main">
+        <div class="time-score">
+          <div class="time">
+            <h3>Time left: <span id="time">5</span></h3>
+          </div>
+          <div class="score">
+            <h3>Score: <span id="score">0</span></h3>
+          </div>
+        </div>
+        <div class="word-container">
+          <div class="word" id="current-word-container">
+            <h4 class="random-word" id="current-word"></h4>
+          </div>
+        </div>
+        <div class="input-word">
+          <input
+            type="text"
+            id="word-input"
+            placeholder="Start typing..."
+            autofocus
+          />
+        </div>
+        <div class="message">
+          <h4 class="message__text" id="message"></h4>
+        </div>
+        <div class="btns">
+          <div class="btn-start" id="btn-start">
+            <button>Start</button>
+          </div>
+          <div class="btn-restart" id="btn-restart">
+            <button onclick="refreshPage()">
+              Restart
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="credit">Photo by Patrick Tomasso on Unsplash</div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
