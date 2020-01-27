@@ -18,7 +18,15 @@ var seconds = document.querySelector('#seconds');
 var btnStart = document.querySelector('#btn-start');
 var btnRestart = document.querySelector('#btn-restart');
 
-// Fetching the words
+btnRestart.style.display = 'none';
+currentWordContainer.style.display = 'none';
+
+// Start the game btn
+function initialize() {
+  btnStart.addEventListener('click', init);
+}
+
+// Fetching words
 const words = [];
 (function fetchWordsArray() {
   fetch('./words.json')
@@ -28,13 +36,6 @@ const words = [];
     })
     .catch(err => console.log(err));
 })();
-
-btnRestart.style.display = 'none';
-currentWordContainer.style.display = 'none';
-
-function initialize() {
-  btnStart.addEventListener('click', init);
-}
 
 //// Initialize Game
 function init() {

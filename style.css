@@ -7,13 +7,12 @@
 
 * {
   box-sizing: border-box;
-}
-
-html,
-body {
-  font-family: 'Inconsolata', monospace;
   padding: 0;
   margin: 0;
+}
+
+body {
+  font-family: 'Inconsolata', monospace;
 }
 
 .container {
@@ -23,7 +22,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   color: var(--clr-txt-main);
   background-image: url(./img/bg.jpg);
   background-size: cover;
@@ -41,7 +39,8 @@ body {
   background-color: var(--clr-bg-txt);
 }
 
-.title p {
+.sub-title {
+  margin-top: 1rem;
   padding: var(--p-txt-p);
   background-color: var(--clr-bg-txt);
 }
@@ -56,7 +55,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-color: var(--clr-bg-txt); */
 }
 
 .time-score {
@@ -75,10 +73,6 @@ body {
 .score {
   padding: var(--p-txt-p);
   background-color: var(--clr-bg-txt);
-}
-
-.time-score h3 {
-  margin: 0;
 }
 
 .word-container {
@@ -184,6 +178,11 @@ button:hover {
         MEDIA
 //////////////////////////*/
 @media screen and (max-width: 500px) {
+  /* .container {
+    background-image: none !important;
+    background-color: pink;
+  } */
+
   .credit {
     transform: rotate(0deg);
     position: absolute;
